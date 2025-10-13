@@ -23,7 +23,7 @@
           },
           {
             "group": "高级",
-            "pages": ["advanced/shortcuts"]
+            "pages": ["advanced/shortcuts", "advanced/media-server"]
           }
         ]
       }
