@@ -17,22 +17,22 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
 播放器主要由以下几个区域组成：
 
 <CardGroup cols={3}>
-  <Card title="顶部导航栏" icon="navigation" href="#top-navbar">
+  <Card title="顶部导航栏" icon="panel-top" href="#top-navbar">
     包含返回按钮、视频标题和功能菜单
   </Card>
-  <Card title="视频播放区域" icon="play-circle" href="#video-player">
+  <Card title="视频播放区域" icon="monitor-play" href="#video-player">
     主要的视频内容显示区域，支持字幕覆盖
   </Card>
-  <Card title="进度控制栏" icon="slider" href="#progress-bar">
+  <Card title="进度控制栏" icon="panel-bottom" href="#progress-bar">
     显示播放进度，支持精确定位和字幕跳转
   </Card>
-  <Card title="播放控制面板" icon="settings" href="#control-panel">
+  <Card title="播放控制面板" icon="settings-2" href="#control-panel">
     集中的播放控制按钮和设置选项
   </Card>
-  <Card title="字幕列表面板" icon="list" href="#subtitle-panel">
+  <Card title="字幕列表面板" icon="list-video" href="#subtitle-panel">
     可收缩的侧边栏，显示完整字幕列表
   </Card>
-  <Card title="字幕覆盖层" icon="subtitles" href="#subtitle-overlay">
+  <Card title="字幕覆盖层" icon="captions" href="#subtitle-overlay">
     可自定义位置的字幕显示区域
   </Card>
 </CardGroup>
@@ -94,7 +94,7 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
     </ul>
   </Accordion>
 
-  <Accordion title="字幕覆盖" icon="subtitles">
+  <Accordion title="字幕覆盖" icon="captions">
     <ul>
       <li>可拖拽调整位置</li>
       <li>可调整大小和透明度</li>
@@ -106,9 +106,9 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
   <Accordion title="交互功能" icon="mouse">
     <ul>
       <li>点击播放/暂停</li>
-      <li>双击进入全屏</li>
       <li>滚轮调节音量</li>
-      <li>右键菜单选项</li>
+      {/* <li>双击进入全屏</li> */}
+      {/* <li>右键菜单选项</li> */}
     </ul>
   </Accordion>
 </AccordionGroup>
@@ -134,42 +134,22 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
 
 <Info>控制面板集成了所有主要的播放控制功能，提供完整的播放体验。</Info>
 
-#### 进度控制区（中央）
-
-<CardGroup cols={5}>
-  <Card title="上一句" icon="skip-back">
-    跳转到上一条字幕
-    <br />
-    <code>A</code>
-  </Card>
-  <Card title="向后跳转" icon="rewind">
-    向后跳转(后退10秒)
-    <br />
-    <code>←</code>
-  </Card>
-  <Card title="播放/暂停" icon="play">
-    主要播放控制
-    <br />
-    <code>空格</code>
-  </Card>
-  <Card title="向前跳转" icon="fast-forward">
-    向前跳转(向前10秒)
-    <br />
-    <code>→</code>
-  </Card>
-  <Card title="下一句" icon="skip-forward">
-    跳转到下一条字幕
-    <br />
-    <code>D</code>
-  </Card>
-</CardGroup>
-
 <Tabs>
   <Tab title="左侧控制区">
     <ul>
       <li><strong>循环模式</strong>：单句循环开关</li>
       <li><strong>自动暂停</strong>：自动暂停开关</li>
       <li><strong>字幕按钮</strong>：字幕显示模式切换</li>
+    </ul>
+  </Tab>
+
+  <Tab title="中央控制区">
+    <ul>
+      <li><Icon icon="skip-back"/> 跳转到上一条字幕</li>
+      <li><Icon icon="rewind"/> 向后跳转(后退10秒)</li>
+      <li><Icon icon="play"/> 播放/暂停</li>
+      <li><Icon icon="fast-forward"/> 向前跳转(向前10秒)</li>
+      <li><Icon icon="skip-forward"/> 跳转到下一条字幕</li>
     </ul>
   </Tab>
 
@@ -186,10 +166,8 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
 ### 5. 字幕列表面板
 
 <Frame caption="字幕列表面板">
-  <img src="/images/subtitle-panel.png" alt="字幕列表面板" />
+  <img src="/images/subtitle-panel.gif" alt="字幕列表面板" />
 </Frame>
-
-<Tip>字幕列表面板是 EchoPlayer 的特色功能之一，为语言学习提供强大支持。</Tip>
 
 #### 核心功能
 
@@ -222,7 +200,7 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
 ### 6. 字幕覆盖层
 
 <Frame caption="字幕覆盖层">
-  <img src="/images/subtitle-overlay.png" alt="字幕覆盖层" />
+  <img src="/images/subtitle-overlay.gif" alt="字幕覆盖层" />
 </Frame>
 
 <Tip>字幕覆盖层是 EchoPlayer 的创新功能，提供最佳的学习体验。</Tip>
@@ -253,16 +231,16 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
 <Note>用户可以根据喜好和环境调整字幕样式，提供多种视觉效果选择。</Note>
 
 <CardGroup cols={2}>
-  <Card title="透明背景" icon="eye-off">
+  <Card title="透明背景" icon="square-dashed">
     完全透明的背景，让字幕融入视频画面
   </Card>
-  <Card title="毛玻璃效果" icon="blur">
+  <Card title="毛玻璃效果" icon="sparkles">
     模糊毛玻璃效果，现代感十足的视觉体验
   </Card>
-  <Card title="半透明背景" icon="square">
+  <Card title="半透明背景" icon="blend">
     半透明纯色背景，平衡可读性与美观
   </Card>
-  <Card title="浅灰色背景" icon="square">
+  <Card title="浅灰色背景" icon="contrast">
     经典的浅灰色背景，确保最佳可读性
   </Card>
 </CardGroup>
@@ -426,7 +404,7 @@ description: '全面了解 EchoPlayer 的界面布局、核心功能和特色设
     学习如何管理视频文件，创建播放列表
   </Card>
 
-<Card title="字幕系统" icon="subtitles" href="/player/subtitle-system">
+<Card title="字幕系统" icon="captions" href="/player/subtitle-system">
   深入了解字幕功能和自定义选项
 </Card>
 

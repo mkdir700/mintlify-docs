@@ -9,55 +9,40 @@ EchoPlayer 的字幕系统是其核心优势，专为语言学习优化，提供
 
 ### 支持的格式
 
-<CardGroup cols={2}>
-  <Card title="SRT (.srt)" icon="file-text">
-    **最常用的字幕格式**
-    - 简洁的文本格式
-    - 广泛的兼容性
-    - 时间轴精确
-    - 适合大多数场景
-  </Card>
+<CardGroup cols={3}>
+<Card title="SRT (.srt)" icon="file-text">
+  **最常用的字幕格式**
+  - 简洁的文本格式
+  - 广泛的兼容性
+  - 时间轴精确
+  - 适合大多数场景
+</Card>
 
-<Card title="VTT (.vtt)" icon="file-video">
-  **Web 标准字幕格式** - HTML5 视频标准 - 支持样式和定位 - Web 平台友好 - 现代化设计
+<Card title="VTT (.vtt)" icon="captions">
+  **Web 标准字幕格式**
+  - HTML5 视频标准
+  - 支持样式和定位
+  - Web 平台友好
+  - 现代化设计
 </Card>
 
 <Card title="ASS/SSA (.ass/.ssa)" icon="file-code">
-  **高级字幕格式** - 丰富的样式支持 - 动画和特效 - 精确的定位控制 - 专业制作标准
+  **高级字幕格式**
+  - 原格式提供丰富的样式支持
+  - 原格式具备动画和特效能力
+  - 精确的定位控制
+  - 专业制作标准
 </Card>
 
-  <Card title="JSON (.json)" icon="file-lines">
-    **EchoPlayer 专用格式**
-    - 结构化数据存储
-    - 扩展元数据支持
-    - 学习进度记录
-    - 自定义标记
-  </Card>
 </CardGroup>
 
-### 文件命名规则
-
-EchoPlayer 采用智能的字幕文件检测机制：
-
-```text
-视频文件：movie.mp4
-
-自动检测的字幕文件：
-├── movie.srt                 # 默认字幕
-├── movie.zh.srt             # 中文字幕
-├── movie.en.srt             # 英文字幕
-├── movie.zh-CN.srt          # 简体中文
-├── movie.zh-TW.srt          # 繁体中文
-├── movie.ja.srt             # 日文字幕
-├── movie.ko.srt             # 韩文字幕
-└── movie.forced.srt         # 强制字幕
-```
-
-<Info>系统会按照优先级自动选择字幕文件，您也可以手动切换或添加字幕。</Info>
+<Tip>
+注意：EchoPlayer 仅从文件中抽取字幕内容，如 ASS 字幕中的特效和动画不支持显示
+</Tip>
 
 ## 字幕导入和管理
 
-### 自动导入
+{/* ### 自动导入
 
 启动视频播放时，EchoPlayer 会自动扫描：
 
@@ -66,31 +51,39 @@ EchoPlayer 采用智能的字幕文件检测机制：
   <Step title="子目录查找">检查 `subtitles/`、`subs/`、`字幕/` 等常见字幕目录</Step>
   <Step title="语言识别">根据文件名识别字幕语言和类型</Step>
   <Step title="自动加载">按优先级自动加载最佳字幕</Step>
-</Steps>
+</Steps> */}
 
 ### 手动导入
 
-如果需要手动添加字幕：
+<Steps>
+  <Step title="点击导入字幕">在字幕列表面板点击「导入字幕」按钮</Step>
+  <Step title="选择字幕文件">浏览并选择字幕文件</Step>
+</Steps>
 
-<Tabs>
-  <Tab title="播放时导入">
-    1. 在播放界面点击字幕按钮 <Icon icon="captions" size={16} />
-    2. 选择"导入字幕文件"
-    3. 浏览并选择字幕文件
-    4. 确认加载并选择语言类型
-  </Tab>
+<Frame caption="导入字幕文件">
+  <img src="/images/subtitile-import.gif" alt="导入字幕文件" />
+</Frame>
 
-<Tab title="拖拽导入">
-  1. 直接拖拽字幕文件到播放器窗口 2. 系统自动识别并加载 3. 可同时拖拽多个字幕文件 4. 支持批量处理
+{/* <Tabs>
+<Tab title="播放时导入">
+  1. 在播放界面点击字幕按钮 <Icon icon="captions" size={16} />
+  2. 选择"导入字幕文件"
+  3. 浏览并选择字幕文件
+  4. 确认加载并选择语言类型
 </Tab>
 
-  <Tab title="在线下载">
-    1. 在字幕菜单中选择"在线搜索"
-    2. 自动匹配视频信息
-    3. 从字幕库中下载合适字幕
-    4. 一键导入到播放器
-  </Tab>
-</Tabs>
+<Tab title="拖拽导入">
+  1. 直接拖拽字幕文件到播放器窗口
+  2. 系统自动识别并加载
+</Tab>
+
+<Tab title="在线下载">
+  1. 在字幕菜单中选择"在线搜索"
+  2. 自动匹配视频信息
+  3. 从字幕库中下载合适字幕
+  4. 一键导入到播放器
+</Tab>
+</Tabs> */}
 
 ### 字幕文件管理
 
@@ -102,15 +95,10 @@ EchoPlayer 采用智能的字幕文件检测机制：
     - 自定义语言优先级
   </Accordion>
 
-<Accordion title="编码处理">
-  - 自动检测字符编码 - 支持 UTF-8、GBK、Shift-JIS 等 - 编码转换和修复 - 乱码问题自动解决
-</Accordion>
-
-  <Accordion title="时间轴调整">
-    - 整体时间偏移调整
-    - 单句时间精确编辑
-    - 字幕同步优化
-    - 播放速度适配
+  <Accordion title="编码处理">
+    - 自动检测字符编码
+    - 编码转换和修复
+    - 乱码问题自动解决
   </Accordion>
 </AccordionGroup>
 
@@ -122,8 +110,6 @@ EchoPlayer 提供四种字幕显示模式，满足不同学习需求：
 
 <Tabs>
   <Tab title="隐藏字幕">
-    <img src="/images/subtitle-hidden.png" alt="隐藏字幕模式" />
-
     **适用场景：**
     - 听力训练和测试
     - 高级学习者练习
@@ -137,8 +123,6 @@ EchoPlayer 提供四种字幕显示模式，满足不同学习需求：
   </Tab>
 
   <Tab title="原文字幕">
-    <img src="/images/subtitle-original.png" alt="原文字幕模式" />
-
     **适用场景：**
     - 进阶语言学习
     - 语音与文字对照
@@ -152,8 +136,6 @@ EchoPlayer 提供四种字幕显示模式，满足不同学习需求：
   </Tab>
 
   <Tab title="译文字幕">
-    <img src="/images/subtitle-translated.png" alt="译文字幕模式" />
-
     **适用场景：**
     - 内容理解优先
     - 复杂剧情跟进
@@ -167,8 +149,6 @@ EchoPlayer 提供四种字幕显示模式，满足不同学习需求：
   </Tab>
 
   <Tab title="双语字幕">
-    <img src="/images/subtitle-bilingual.png" alt="双语字幕模式" />
-
     **适用场景：**
     - 初学者友好
     - 对照学习方式
@@ -196,7 +176,7 @@ EchoPlayer 的字幕覆盖层提供最大的自定义自由度：
     - 多屏幕适配
   </Card>
 
-  <Card title="大小调整" icon="resize">
+  <Card title="大小调整" icon="maximize-2">
     - 右下角调整手柄
     - 双击快速最大化
     - 比例保持选项
@@ -246,7 +226,7 @@ EchoPlayer 的字幕覆盖层提供最大的自定义自由度：
 
 字幕列表面板是 EchoPlayer 的特色功能，提供完整的字幕浏览和导航体验：
 
-<img src="/images/subtitle-list-panel.png" alt="字幕列表面板" />
+<img src="/images/subtitle-panel.gif" alt="字幕列表面板" />
 
 #### 核心功能
 
@@ -258,17 +238,16 @@ EchoPlayer 的字幕覆盖层提供最大的自定义自由度：
     - **时间戳显示**：精确的时间信息
   </Accordion>
 
-<Accordion title="快速导航">
-  - **点击跳转**：点击任意字幕直接跳转播放 - **键盘控制**：上下箭头键选择字幕 -
-  **回车跳转**：按回车键跳转到选中字幕 - **页面翻页**：PageUp/PageDown 快速滚动
-</Accordion>
+  <Accordion title="快速导航">
+    - **点击跳转**：点击任意字幕直接跳转播放
+  </Accordion>
 
-  <Accordion title="搜索和过滤">
+  {/* <Accordion title="搜索和过滤">
     - **文本搜索**：快速查找包含特定词汇的字幕
     - **时间范围过滤**：按时间段筛选字幕
     - **语言过滤**：在多语言字幕中筛选
     - **高亮显示**：搜索结果高亮标记
-  </Accordion>
+  </Accordion> */}
 </AccordionGroup>
 
 ### 显示模式
@@ -309,20 +288,6 @@ EchoPlayer 的字幕覆盖层提供最大的自定义自由度：
     - 便于理解和记忆
 
   </Tab>
-
-  <Tab title="紧凑模式">
-    ```
-    [01:23] Hello, how are you? | 你好吗？
-    [01:26] I'm fine, thanks. | 我很好，谢谢。
-    [01:30] What about you? | 你呢？
-    ```
-
-    **特点：**
-    - 减少垂直空间占用
-    - 适合小屏幕设备
-    - 提高信息密度
-
-  </Tab>
 </Tabs>
 
 ## 学习辅助功能
@@ -334,11 +299,11 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
 <Steps>
   <Step title="选择文本">在字幕覆盖层或列表面板中拖拽选择文本</Step>
   <Step title="复制内容">右键选择"复制"或使用 Ctrl+C 快捷键</Step>
-  <Step title="格式选择">可选择复制纯文本或包含时间戳的格式</Step>
+  {/* <Step title="格式选择">可选择复制纯文本或包含时间戳的格式</Step> */}
   <Step title="外部使用">粘贴到笔记应用或学习工具中</Step>
 </Steps>
 
-### 字幕导出
+{/* ### 字幕导出
 
 支持将字幕内容导出为多种格式：
 
@@ -356,9 +321,9 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 兼容其他播放器
     - 分享和备份
   </Card>
-</CardGroup>
+</CardGroup> */}
 
-### 学习进度标记
+{/* ### 学习进度标记
 
 <AccordionGroup>
   <Accordion title="重点标记">
@@ -369,7 +334,10 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
   </Accordion>
 
 <Accordion title="难点记录">
-  - 标记理解困难的句子 - 添加个人注释 - 重复练习提醒 - 学习统计分析
+  - 标记理解困难的句子
+  - 添加个人注释
+  - 重复练习提醒
+  - 学习统计分析
 </Accordion>
 
   <Accordion title="熟练度追踪">
@@ -378,9 +346,9 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 智能推荐复习内容
     - 学习进度可视化
   </Accordion>
-</AccordionGroup>
+</AccordionGroup> */}
 
-## 高级设置
+{/* ## 高级设置
 
 ### 字幕同步调整
 
@@ -394,9 +362,12 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 保存调整设置
   </Tab>
 
-<Tab title="单句调整">
-  - 在字幕列表中右键单句字幕 - 精确编辑开始和结束时间 - 拖拽调整时间范围 - 多句批量调整
-</Tab>
+  <Tab title="单句调整">
+    - 在字幕列表中右键单句字幕
+    - 精确编辑开始和结束时间
+    - 拖拽调整时间范围
+    - 多句批量调整
+  </Tab>
 
   <Tab title="自动同步">
     - 利用音频波形分析
@@ -430,9 +401,9 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 边距和内边距
     - 多行显示模式
   </Card>
-</CardGroup>
+</CardGroup> */}
 
-## 实用技巧
+{/* ## 实用技巧
 
 ### 快捷操作
 
@@ -450,7 +421,7 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 利用搜索功能找到特定内容
     - 键盘方向键精确移动
   </Card>
-</CardGroup>
+</CardGroup> */}
 
 ### 学习建议
 
@@ -462,17 +433,19 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
     - 积极标记和复制重要内容
   </Accordion>
 
-<Accordion title="进阶学习者">
-  - 逐步切换到原文字幕模式 - 利用字幕列表提前预习 - 尝试隐藏字幕进行听力训练 -
-  使用搜索功能复习特定词汇
-</Accordion>
+  <Accordion title="进阶学习者">
+    - 逐步切换到原文字幕模式
+    - 利用字幕列表提前预习
+    - 尝试隐藏字幕进行听力训练
+    {/* - 使用搜索功能复习特定词汇 */}
+  </Accordion>
 
-  <Accordion title="高级用户">
+  {/* <Accordion title="高级用户">
     - 自定义字幕显示效果
     - 利用导出功能制作学习材料
     - 结合其他学习工具使用
     - 参与字幕制作和分享
-  </Accordion>
+  </Accordion> */}
 </AccordionGroup>
 
 ## 下一步
@@ -482,7 +455,7 @@ EchoPlayer 支持字幕文本的选择和复制，方便学习和记录：
 <CardGroup cols={2}>
   <Card
     title="播放控制"
-    icon="controls"
+    icon="play"
     href="/player/playback-controls"
   >
     学习播放控制的高级功能和技巧

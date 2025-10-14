@@ -7,6 +7,9 @@
     "light": "#66B3FF",
     "dark": "#0066CC"
   },
+  "icons": {
+    "library": "lucide"
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
@@ -26,6 +29,16 @@
             "pages": ["advanced/shortcuts", "advanced/media-server"]
           }
         ]
+      },
+      {
+        "tab": "更新日志",
+        "groups": [
+          {
+            "group": "更新日志",
+            "icon": "history",
+            "pages": ["changelog"]
+          }
+        ]
       }
     ],
     "global": {
@@ -42,10 +55,6 @@
         }
       ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [

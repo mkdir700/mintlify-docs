@@ -70,6 +70,10 @@ description: "三步快速上手 EchoPlayer，开始您的语言学习之旅"
   </Step>
 </Steps>
 
+<Tip>
+EchoPlayer 默认支持大多数常见的视频与音频格式；若遇到编码不兼容的文件，播放器会提醒安装媒体服务器以获得最佳兼容性。了解媒体服务器的工作原理与安装流程，请参阅 [媒体服务器指南](/advanced/media-server)。
+</Tip>
+
 ### 方法二：拖拽添加
 
 您也可以直接将视频文件拖拽到 EchoPlayer 窗口中：
@@ -85,22 +89,7 @@ description: "三步快速上手 EchoPlayer，开始您的语言学习之旅"
 
 ## 第三步：添加字幕
 
-字幕是语言学习的重要工具。EchoPlayer 支持多种方式添加字幕：
-
-### 自动检测
-
-EchoPlayer 会自动查找与视频同名的字幕文件：
-
-```
-电影.mp4          # 视频文件
-电影.srt          # 自动检测的字幕
-电影.zh.srt       # 中文字幕
-电影.en.srt       # 英文字幕
-```
-
-### 手动添加
-
-如果需要手动添加字幕：
+字幕是语言学习的重要工具，通过以下步骤导入字幕：
 
 <Steps>
   <Step title="进入播放界面">
@@ -119,18 +108,15 @@ EchoPlayer 会自动查找与视频同名的字幕文件：
 
 ### 支持的字幕格式
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="SRT" icon="file-text">
     最常见的字幕格式
   </Card>
-  <Card title="VTT" icon="file-video">
+  <Card title="VTT" icon="captions">
     Web 标准字幕格式
   </Card>
   <Card title="ASS/SSA" icon="file-code">
     支持样式的字幕格式
-  </Card>
-  <Card title="JSON" icon="file-lines">
-    EchoPlayer 专用格式
   </Card>
 </CardGroup>
 
@@ -142,15 +128,99 @@ EchoPlayer 会自动查找与视频同名的字幕文件：
 
 <img src="/images/player-controls.png" alt="播放控制栏" />
 
-主要控制按钮：
+播放控制栏分为「字幕跳转与时间轴」与「学习辅助功能」两个区域，可以用鼠标或快捷键完成高效的听力训练。
 
-| 按钮 | 功能 | 快捷键 |
-|------|------|--------|
-| <Icon icon="skip-back" size={16} /> | 上一句字幕 | `A` |
-| <Icon icon="rewind" size={16} /> | 向后跳转 | `←` |
-| <Icon icon="play" size={16} />/<Icon icon="pause" size={16} /> | 播放/暂停 | `空格` |
-| <Icon icon="fast-forward" size={16} /> | 向前跳转 | `→` |
-| <Icon icon="skip-forward" size={16} /> | 下一句字幕 | `D` |
+#### 字幕跳转与时间轴
+
+<table style={{ width: '100%', tableLayout: 'fixed' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '12%' }}>按钮</th>
+      <th style={{ width: '28%' }}>核心用途</th>
+      <th style={{ width: '60%' }}>操作说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align='center'><Icon icon="skip-back" size={16} /></td>
+      <td>上一句字幕</td>
+      <td>定位回当前字幕的上一句开头，适合复习上一句听写。快捷键 `A`，长按可连续回退多句。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="undo" size={16} /></td>
+      <td>快速倒带</td>
+      <td>快退 10 秒，便于回顾上一段内容。对应快捷键 `←`，按住可持续倒退。</td>
+    </tr>
+    <tr>
+      <td align='center'>
+        <Icon icon="play" size={16} />/<Icon icon="pause" size={16} />
+      </td>
+      <td>播放 / 暂停</td>
+      <td>控制当前句子的播放状态。支持键盘 `空格` 切换，也可在自动暂停模式下手动恢复。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="redo" size={16} /></td>
+      <td>快速快进</td>
+      <td>快进 10 秒，快速跳过已掌握片段。快捷键 `→`，按住可连续快进。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="skip-forward" size={16} /></td>
+      <td>下一句字幕</td>
+      <td>跳转到下一句字幕的开头，配合逐句学习使用。快捷键 `D`，长按即可快速浏览多句。</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 学习辅助功能
+
+<table style={{ width: '100%', tableLayout: 'fixed' }}>
+  <thead>
+    <tr>
+      <th style={{ width: '10%' }}>按钮</th>
+      <th style={{ width: '20%' }}>功能要点</th>
+      <th style={{ width: '70%' }}>操作说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align='center'><Icon icon="pause" size={16} /></td>
+      <td>自动暂停句尾</td>
+      <td>左键启用或停用。悬停打开设置卡片，可独立开关“句末暂停”“自动恢复播放”，并调节恢复延迟（支持快捷 5 秒 / 10 秒与自定义秒数）。无字幕时按钮会自动禁用。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="repeat" size={16} /></td>
+      <td>单句循环训练</td>
+      <td>左键切换循环开关，右上角徽章实时显示剩余次数或“∞”。悬停可选择循环次数（2、5、10 次或手动输入），也可设为无限循环。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="captions" size={16} /></td>
+      <td>字幕模式与背景</td>
+      <td>左键在“隐藏 / 双语”之间快速切换。悬停展开菜单，可在隐藏、原文、译文、双语之间切换，并调整字幕背景（透明、模糊、黑底、灰底）。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="zap" size={16} /></td>
+      <td>播放速度</td>
+      <td>显示当前倍速（保留两位小数）。左键循环常用倍速，右键或悬停打开速率面板，支持 0.25x–3x 预设。Ctrl / 右键点击任一速率即可收藏或取消收藏，收藏项在按钮循环时优先出现。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="volume-2" size={16} /></td>
+      <td>音量控制</td>
+      <td>左键静音 / 取消静音。悬停显示纵向音量条（0–100%，支持拖拽与滚轮微调），松开鼠标即刻生效。</td>
+    </tr>
+    <tr>
+      <td align='center'><Icon icon="settings" size={16} /></td>
+      <td>播放设置</td>
+      <td>打开播放器设置面板，集中管理字幕、快捷键等高级配置。</td>
+    </tr>
+    <tr>
+      <td align='center'>
+        <Icon icon="maximize" size={16} />/<Icon icon="minimize" size={16} />
+      </td>
+      <td>全屏切换</td>
+      <td>切换窗口与全屏模式，图标会根据当前状态显示进入或退出全屏。</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 逐句学习模式
 
@@ -237,8 +307,8 @@ EchoPlayer 的核心功能是逐句精听：
 | 单句循环 | `R` | 开启/关闭当前句子循环 |
 | 重播当前字幕 | `S` | 重新播放当前字幕 |
 | 全屏切换 | `F` | 进入/退出全屏模式 |
-| 音量增加 | `↑` | 增加音量 |
-| 音量减少 | `↓` | 减少音量 |
+{/* | 音量增加 | `↑` | 增加音量 | */}
+{/* | 音量减少 | `↓` | 减少音量 | */}
 
 ## 学习建议
 
@@ -286,27 +356,11 @@ EchoPlayer 的核心功能是逐句精听：
   </Card>
 
   <Card
-    title="学习高级技巧"
-    icon="tools"
-    href="/advanced/settings"
-  >
-    掌握个性化设置和效率提升技巧
-  </Card>
-
-  <Card
     title="查看快捷键大全"
     icon="keyboard"
     href="/advanced/shortcuts"
   >
     完整的快捷键列表和自定义方法
-  </Card>
-
-  <Card
-    title="故障排除"
-    icon="bug"
-    href="/advanced/troubleshooting"
-  >
-    遇到问题时的解决方案
   </Card>
 </CardGroup>
 
